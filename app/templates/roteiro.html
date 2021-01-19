@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+    {% block title %}{{ super() }} - Sorter Roteiro{% endblock %}
+
+    {% block content %}
+    <main>
+        <div class="container-fluid bg-primary">
+            <form class="center">
+                <label>1-<input type="radio" name="esteira" value="1" checked class="radio"></label>
+                <label>2-<input type="radio" name="esteira" value="2" class="radio"></label>
+                <label>3-<input type="radio" name="esteira" value="3" class="radio"></label>
+                <label>4-<input type="radio" name="esteira" value="4" class="radio"></label>
+                <label>5-<input type="radio" name="esteira" value="5" class="radio"></label>
+                <label>6-<input type="radio" name="esteira" value="6" class="radio"></label>
+                <label>7-<input type="radio" name="esteira" value="7" class="radio"></label>
+                <label>8-<input type="radio" name="esteira" value="8" class="radio"></label>
+                <input type="text" name="frota" placeholder="Frota">
+                <input type="submit" value="Confirmar Sorter" class="btn btn-warning"/>  
+            </form>
+        </div>
+        <div align="center">
+            <input type="submit" value="Confirmar Sorter Selecionados" class="btn btn-warning"/>  
+        </div>
+        <div class="container-fluid bg-success">
+            <form method="POST" action="">
+                <div class="table-responsive">
+                    <table class="table table-hover table-dark" "table table-bordered">
+                        <tr>
+                            <th>Mark</th>
+                            <th>Sorter</th>
+                            <th>Frota</th>
+                            <th>Docto</th>
+                            <th>CEP</th>
+                            <th>Destinatario</th>
+                            <th>Caixas</th>
+                        </tr>
+                        {% for row in docto %}
+                            <tr id="{{row.id}}"></tr>
+                            <td><input type="checkbox" name="mycheckbox" value="{{row.id}}" /></td>
+                            <td>{{row['sorter']}}</td>
+                            <td>{{row['frota']}}</td>
+                            <td>{{row['cte']}}</td>
+                            <td>{{row['cep']}}</td>
+                            <td>{{row['destinatario']}}</td>
+                            <td>{{row['caixa']}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div align="center">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <input type="submit" value="Confirmar todo o manifesto" class="btn btn-primary">  
+                </div>
+            </form>
+        </div>
+    </main>
+    {% endblock %}

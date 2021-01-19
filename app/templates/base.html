@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DGN_Sistemas{% endblock %}</title>
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/roteiro.css">
+    <link rel="stylesheet" href="../static/css/pn.css">
+    <!-- Scripts -->
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- Font Awsome-->
+    <script src="https://kit.fontawesome.com/9320b1fe9b.js" crossorigin="anonymous"></script>
+    <!-- Progress Bar -->
+    <script src="../static/js/progressbar.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container" id="nav-container">  <!-- CONTAINER:ajUsta para um tamanho o conteudo que esta dentro dela  NAV-CONTAINER:-->
+            <nav class="navbar navbar-expand-lg fixed-top"> <!-- FIXED-TOP fixa a barra no topo-->
+                <a href="home.html" class="navbar-brand">
+                    <img id="logo" src="../static/img/Sorter.svg" alt="DGN_Sistemas"> DGN_Sistemas
+                </a>    
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="home-menu" href="#">Empresa</a>
+                        <a class="nav-item nav-link" id="about-menu" href="#">Sorter</a>
+                        <a class="nav-item nav-link" data-toggle="modal" data-target="#pnModal" id="services-menu">PN</a>
+                        <a class="nav-item nav-link" data-toggle="modal" data-target="#roteiroModal" id="team-menu">Roteiro</a>
+                        <a class="nav-item nav-link" id="portfolio-menu" href="#">Individual</a>
+                        <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
+                        <a class="nav-item nav-link" id="logout-menu" href="{{url_for('login')}}">Logout</a>
+                    </div>
+                </div>
+            </nav>
+         </div>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- Modal -->
+    <div class="modal fade" id="roteiroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"  id="exampleModalCenterTitle">__________________Roteirização__________________</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/consultaman/" method="POST">
+                        <input type="text" class="form-control" id="manifesto-input" name="pedcli" placeholder="Digite um manifesto">
+                        <input type="submit" id="manifesto-btn" value="Consultar">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="pnModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"  id="exampleModalCenterTitle">_________________Pre-Number_________________</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/consultapn/" method="POST">
+                        <input type="text" class="form-control" id="manifesto-input" name="pn" placeholder="Digite um pre-number">
+                        <input type="submit" id="manifesto-btn" value="Consultar">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="contact-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="main-title">Entre em contato conosco</h3>
+                    </div>
+                    <div class="col-md-4 contact-box">
+                        <i class="fas fa-phone"></i>
+                        <p><span class="contact-tile">Ligue para:</span> (11)99919-0336</p>
+                        <p><span class="contact-tile">Horários:</span> 8:00 - 19:00</p>
+                    </div>
+                    <div class="col-md-4 contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <p><span class="contact-tile">Envie um email:</span> paulodegani@hotmail.com</p>
+                    </div>
+                    <div class="col-md-4 contact-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><span class="contact-tile">Venha tomar um café:</span> Rua Voluntarios da Patria - 2741 ap34</p>
+                    </div>
+                    <div class="col-md-6" id="msg-box">
+                        <p>Ou nos deixe uma mensagem:</p>
+                    </div>
+                    <div class="col-md-6" id="contact-form">
+                        <form action="">
+                            <input type="text" class="form-control" placeholder="E-mail" name="email">
+                            <input type="text" class="form-control" placeholder="Assunto" name="subject">
+                            <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="message"></textarea>
+                            <input type="submit" class="main-btn" Value="Enviar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copy-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Desenvolvido por <a href="#" target="_blank">DGN Sistemas</a> &copy; 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>

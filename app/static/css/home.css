@@ -1,0 +1,215 @@
+/* Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+}
+
+p, li {
+    color: #444;
+    font-size: 14px;
+}
+  
+/* Barra de navegação */
+header, .navbar {
+    background-color: #34495e;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo {
+    width: 75px;
+}
+
+.navbar-brand {
+    padding: 0;
+    color: #FFF;
+}
+
+.navbar-brand hover {
+    color: #FFF;
+}
+
+#navbar-links a {
+    color: #FFF;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem .8rem; /* rem unidade de medida do tamanho da fonte */
+}
+
+/* Slider */
+
+.container-fluid {
+    padding: 0;
+}
+
+#mainSlider .carousel-inner, #mainSlider .carousel-item {
+    height: 98vh;
+}
+
+#mainSlider .carousel-caption {
+    top: 30%;
+}
+
+#mainSlider .carousel-caption h2 {
+    color: #34495e;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#mainSlider .carousel-caption h2:hover {
+    font-size: 50px;
+    margin-bottom: 30px;
+    background-color: #34495e;
+    color: #FFF;
+}
+
+#mainSlider .carousel-caption p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 100px;
+    color: #FFF;
+}
+
+.main-btn {
+    background-color: #65DAF9;
+    color: #FFF;
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent; /* vai cirar azul no hover */
+    transition: .5s;
+}
+
+.main-btn:hover {
+    text-decoration: none;
+    color: #FFF;
+    background-color: transparent;
+    border-color: #65DAF9;
+}
+
+.carousel-indicators .active {
+    background-color: #65DAF9;    
+}
+
+/* Footer */
+
+#contact-area {
+    text-align: center;
+}
+  
+.contact-box {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #3EC1D5;
+}
+ 
+.contact-box i {
+    color: #444;
+    border: solid 1px #444;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+.contact-box p {
+    font-size: 16px;
+}
+  
+.contact-tile {
+    font-weight: bold;
+    color: #3EC1D5;
+}
+  
+#msg-box p {
+    font-size: 22px;
+}
+  
+#contact-form input[type="text"], #contact-form textarea {
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+  
+#contact-form .main-btn {
+    width: 120px;
+    height: 50px;
+}
+  
+#contact-form .main-btn:hover {
+    color: #3EC1D5;
+}
+  
+/* Copy */
+  
+#copy-area {
+    background-color: #F1F1F1;
+}
+  
+#copy-area .container {
+    padding: 10px 0;
+    text-align: center;
+}
+  
+#copy-area .container p {
+    margin-bottom: 0;
+}
+  
+#copy-area .container a {
+    font-weight: bold;
+    color: #444;
+}
+  
+#copy-area .container a:hover {
+    text-decoration: none;
+    color: #3EC1D5;
+}
+  
+/* Modal */
+
+#manifesto-input {
+
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #65DAF9;
+    display: inline;
+    box-sizing: border-box;
+    width: 70%;
+    height: 40px;
+    margin-left: 50px;
+  }
+  
+  #manifesto-btn {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #65DAF9;
+    background-color: #65DAF9;
+    color: #FFF;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 0 30px;
+    margin-left: -130px;
+    position: absolute;
+    transition: .5s;
+  }
+  
+  #manifesto-btn:hover {
+    background-color: #FFF;
+    color: #65DAF9;
+  }
+
